@@ -13,13 +13,25 @@ import { MaterialContainer } from "../common";
 
 export const RetailChart = (props) => {
   return (
-    <MaterialContainer>
+    <MaterialContainer padding={"25px 25px 25px 0"}>
       <ResponsiveContainer width={"95%"} height={400}>
         <LineChart data={props.data}>
-          <Line type="monotone" dataKey="retailSales" stroke="#44A7F6" />
-          <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" />
+          <Line
+            name="retail sales"
+            dataKey="retailSales"
+            stroke="#44A7F6"
+            type="monotone"
+            dot={false}
+          />
+          <Line
+            name="wholesale sales"
+            dataKey="wholesaleSales"
+            stroke="#9AA5BF"
+            type="monotone"
+            dot={false}
+          />
           <XAxis dataKey="weekEnding" />
-          <YAxis />
+          <YAxis width={65} />
           <Tooltip />
           <Legend />
         </LineChart>

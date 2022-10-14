@@ -4,7 +4,11 @@ import styled from "styled-components";
 export const MaterialContainer = (props) => {
   return (
     <MaterialContainerDiv
-      style={{ minWidth: props.width, maxWidth: props.width }}
+      style={{
+        minWidth: props.width,
+        maxWidth: props.width,
+        padding: props.padding,
+      }}
     >
       {props.children}
     </MaterialContainerDiv>
@@ -13,6 +17,7 @@ export const MaterialContainer = (props) => {
 
 MaterialContainer.defaultProps = {
   width: "100%",
+  padding: 0,
 };
 
 const MaterialContainerDiv = styled.div`

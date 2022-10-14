@@ -13,7 +13,7 @@ import { MaterialContainer } from "../common";
 
 export const RetailChart = (props) => {
   return (
-    <MaterialContainer padding={"25px 25px 25px 0"}>
+    <MaterialContainer padding={"25px 0"}>
       <TableHeader>Retail Sales</TableHeader>
       <ResponsiveContainer width={"95%"} height={400}>
         <LineChart data={props.data}>

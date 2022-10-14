@@ -16,6 +16,11 @@ MaterialContainer.defaultProps = {
 };
 
 const MaterialContainerDiv = styled.div`
+  // flexbox
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   // box model
   background-color: rgb(255, 255, 255);
   border-radius: 3px;

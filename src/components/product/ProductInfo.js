@@ -50,7 +50,7 @@ const TagsList = styled.ul`
   // box model
   padding: 15px 25px;
   border-top: 2px solid rgb(234, 237, 243);
-  border-bottom: 1px solid rgb(234, 237, 243);
+  border-bottom: 2px solid rgb(234, 237, 243);
 
   // typography
   color: rgb(71, 81, 102);

@@ -6,14 +6,13 @@ import { RetailChart } from "./RetailChart";
 import { RetailTable } from "./RetailTable";
 
 export const Product = (props) => {
-  const products = useSelector((state) => state.productsReducer.products);
-
+  const product = useSelector((state) => state.productsReducer.products[0][0]);
   return (
     <ProductDiv>
-      <ProductInfo {...products[0][0]} />
+      <ProductInfo {...product} />
       <ColumnDiv>
-        <RetailChart />
-        <RetailTable />
+        <RetailChart data={product.sales} />
+        <RetailTable data={product.sales} />
       </ColumnDiv>
     </ProductDiv>
   );

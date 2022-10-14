@@ -1,27 +1,37 @@
 import React from "react";
 import styled from "styled-components";
-import { useTable } from "react-table";
+import { useTable, useSortBy } from "react-table";
 import { MaterialContainer } from "../common";
 
 function Table({ columns, data }) {
-  // Use the state and functions returned from useTable to build your UI
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({
-      columns,
-      data,
-    });
+    useTable(
+      {
+        columns,
+        data,
+      },
+      useSortBy
+    );
 
-  // Render the UI for your table
+  const headerGroup = headerGroups[1];
   return (
     <TableContainer {...getTableProps()}>
       <thead>
-        {headerGroups.splice(1).map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-            ))}
-          </tr>
-        ))}
+        <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map((column) => (
+            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+              {column.render("Header")}
+              {/* Add a sort direction indicator */}
+              <span>
+                {column.isSorted
+                  ? column.isSortedDesc
+                    ? " ▼ "
+                    : " ▲ "
+                  : " - "}
+              </span>
+            </th>
+          ))}
+        </tr>
       </thead>
       <tbody {...getTableBodyProps()}>
         {rows.map((row, i) => {
@@ -93,15 +103,23 @@ const TableStyles = styled.div`
     th {
       color: #525c6b;
       border-bottom: 1px solid rgb(234, 237, 243);
-      padding: 25px 15px;
+      padding: 25px 0px 25px 25px;
       padding-top: 0px;
+
+      span {
+        display: inline-block;
+        width: 15px;
+        padding-right: 10px;
+        color: #a1aebf;
+        font-family: monospace;
+      }
     }
     tr {
       color: #a1aebf;
     }
     td {
       border-bottom: 1px solid rgb(234, 237, 243);
-      padding: 15px 15px;
+      padding: 15px 30px 15px 15px;
     }
   }
 `;

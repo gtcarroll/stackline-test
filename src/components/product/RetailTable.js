@@ -1,11 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { useTable } from "react-table";
 import { MaterialContainer } from "../common";
 
 export const RetailTable = (props) => {
-  return <MaterialContainer>table</MaterialContainer>;
+  //   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  //     useTable({
+  //       // props.columns,
+  //       // props.data,
+  //     });
+
+  return (
+    <MaterialContainer>
+      <TableStyles>table</TableStyles>
+    </MaterialContainer>
+  );
 };
 
-RetailTable.defaultProps = {};
-
-// const RetailTableDiv = styled.div``;
+const TableStyles = styled.div`
+  table {
+    th {
+    }
+    tr {
+    }
+    td {
+    }
+  }
+`;

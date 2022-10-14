@@ -17,10 +17,6 @@ export const ProductInfo = (props) => {
   );
 };
 
-ProductInfo.defaultProps = {
-  tags: ["Pantry", "Obsolete", "Blender", "Lightning Deal"],
-};
-
 const Image = styled.img`
   // box model
   margin: 20px auto 10px;

@@ -14,6 +14,7 @@ import { MaterialContainer } from "../common";
 export const RetailChart = (props) => {
   return (
     <MaterialContainer padding={"25px 25px 25px 0"}>
+      <TableHeader>Retail Sales</TableHeader>
       <ResponsiveContainer width={"95%"} height={400}>
         <LineChart data={props.data}>
           <Line
@@ -30,8 +31,8 @@ export const RetailChart = (props) => {
             type="monotone"
             dot={false}
           />
-          <XAxis dataKey="weekEnding" />
-          <YAxis width={65} />
+          <XAxis dataKey="weekEnding" hide={true} />
+          <YAxis width={65} hide={true} />
           <Tooltip />
           <Legend />
         </LineChart>
@@ -40,4 +41,11 @@ export const RetailChart = (props) => {
   );
 };
 
-RetailChart.defaultProps = {};
+const TableHeader = styled.h3`
+  //box model
+  width: 95%;
+
+  // typography
+  font-weight: 100;
+  text-align: left;
+`;

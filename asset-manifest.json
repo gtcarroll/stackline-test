@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/stackline-test/static/css/main.223f25b8.css",
+    "main.js": "/stackline-test/static/js/main.331b5585.js",
+    "static/media/stackline_logo.svg": "/stackline-test/static/media/stackline_logo.5935081bd899ecfe02395699e768f84e.svg",
+    "index.html": "/stackline-test/index.html",
+    "main.223f25b8.css.map": "/stackline-test/static/css/main.223f25b8.css.map",
+    "main.331b5585.js.map": "/stackline-test/static/js/main.331b5585.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.223f25b8.css",
+    "static/js/main.331b5585.js"
+  ]
+}
